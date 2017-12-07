@@ -4,6 +4,7 @@
  *
  * jquery 个人源码注释版
  * author：Lezhong Yan
+ * time：2017-12-07
  */
 (function( window, undefined ) {
 
