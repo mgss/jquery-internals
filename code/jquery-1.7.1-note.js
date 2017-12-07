@@ -37,7 +37,7 @@
 
 		// Define a local copy of jQuery
 		var jQuery = function (selector, context) {
-			
+
 			/**
 			 * 在构造函数内部new创建并返回另一个构造实例解析：
 			 * 		1. 可以省去在构造函数jQuery()前加new
@@ -114,7 +114,10 @@
 
 			// [[Class]] -> type pairs
 			class2type = {};
-		// 若干局部变量声明
+		/**
+		 * jQuery.fn指向jQuery原型解析：
+		 * 		jQuery.fn是jQuery.prototype的简写，以减少使用时的拼写长度
+		 */
 		jQuery.fn = jQuery.prototype = {
 			constructor: jQuery,
 			init: function (selector, context, rootjQuery) {
@@ -339,6 +342,7 @@
 			splice: [].splice
 		};
 
+		
 		// Give the init function the jQuery prototype for later instantiation
 		jQuery.fn.init.prototype = jQuery.fn;
 
