@@ -21,6 +21,7 @@
 	var document = window.document,
 		navigator = window.navigator,
 		location = window.location;
+	// 构造jQuery对象
 	var jQuery = (function () {
 
 		/**
@@ -36,6 +37,13 @@
 
 		// Define a local copy of jQuery
 		var jQuery = function (selector, context) {
+			
+			/**
+			 * 在构造函数内部new创建并返回另一个构造实例解析：
+			 * 		1. 可以省去在构造函数jQuery()前加new
+			 * 		2. 构造$()等价于构造jQuery()，都可以省去new
+			 */
+
 			// The jQuery object is actually just the init constructor 'enhanced'
 			return new jQuery.fn.init(selector, context, rootjQuery);
 		},
@@ -106,7 +114,7 @@
 
 			// [[Class]] -> type pairs
 			class2type = {};
-
+		// 若干局部变量声明
 		jQuery.fn = jQuery.prototype = {
 			constructor: jQuery,
 			init: function (selector, context, rootjQuery) {
@@ -397,7 +405,7 @@
 			// Return the modified object
 			return target;
 		};
-
+		// 静态属性和方法
 		jQuery.extend({
 			noConflict: function (deep) {
 				if (window.$ === jQuery) {
