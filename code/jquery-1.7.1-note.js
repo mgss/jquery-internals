@@ -342,7 +342,10 @@
 			splice: [].splice
 		};
 
-		
+		/**
+		 * 将构造函数jQuery()的原型覆盖jQuery.fn.init()的原型对象解析：
+		 * 		为了使jQuery.fn.init()构造的实例也可以访问构造函数jQuery()的原型
+		 */
 		// Give the init function the jQuery prototype for later instantiation
 		jQuery.fn.init.prototype = jQuery.fn;
 
